@@ -1,16 +1,28 @@
 @import './base.css';
 
+html {
+  background-color: antiquewhite;
+}
+
+button {
+  background-color: antiquewhite;
+  border-radius: 5px;
+}
+
+#diagram {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
 #app {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   font-weight: normal;
-}
-
-
-
-@media (hover: hover) {
-
 }
 
 @media (min-width: 1024px) {
