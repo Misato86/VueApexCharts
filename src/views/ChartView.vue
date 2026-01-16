@@ -33,19 +33,20 @@ const radarSeries = computed(() => [{ name: 'Data', data: series.value }])
 <template>
   <div class="chart-view" style="display: flex; gap: 24px; align-items: flex-start">
     <div style="min-width: 320px; max-width: 500px">
+      <button @click="$emit('go-weather')">Gå till väder</button>
+
       <h2>Mata in ditt betyg!</h2>
-      <div>
-        <label
-          >Ämne
-          <input v-model="newLabel" />
-        </label>
-      </div>
-      <div>
-        <label
-          >Betyg
-          <input v-model="newValue" />
-        </label>
-      </div>
+
+      <label
+        >Ämne
+        <input v-model="newLabel" />
+      </label>
+      <br />
+      <label
+        >Betyg
+        <input v-model="newValue" />
+      </label>
+
       <div style="margin-top: 8px">
         <button @click="addPoint">Lägg till betyg</button>
       </div>
