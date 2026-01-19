@@ -1,7 +1,7 @@
 <template>
   <div>
     <button @click="$emit('go-chart')">Gå till betyg</button>
-    <h2>Temperatur (nästa 24h)</h2>
+    <h2>Temperatur senaste 9 dagarna i Mariehamn</h2>
 
     <ApexChart type="line" :options="chartOptions" :series="series" height="400" width="900" />
   </div>
@@ -40,7 +40,7 @@ async function fetchWeather() {
   const start = pastDate.toISOString().split('T')[0] // yyyy-mm-dd
   const end = today.toISOString().split('T')[0]
 
-  // Mariehamn: lat 60.097, lon 19.934
+  // Mariehamn:
   const url = `https://api.open-meteo.com/v1/forecast?latitude=60.097&longitude=19.934&daily=temperature_2m_max,temperature_2m_min&timezone=Europe/Helsinki&start_date=${start}&end_date=${end}`
 
   const response = await fetch(url)
