@@ -42,10 +42,14 @@ const radarSeries = computed(() => [{ name: 'Data', data: series.value }])
         <input v-model="newLabel" />
       </label>
       <br />
-      <label
-        >Betyg
-        <input v-model="newValue" />
-      </label>
+      <fieldset style="margin-top: 8px">
+        <legend>Betyg</legend>
+
+        <label v-for="grade in [4, 5, 6, 7, 8, 9, 10]" :key="grade" style="margin-right: 8px">
+          <input type="radio" :value="grade" v-model="newValue" />
+          {{ grade }}
+        </label>
+      </fieldset>
 
       <div style="margin-top: 8px">
         <button @click="addPoint">Lägg till betyg</button>
